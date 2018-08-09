@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 import FBSDKCoreKit
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+            MSAppCenter.start("4cdfbd83-61d6-4b2c-aaf4-071c641d6ac5", withServices:[ MSAnalytics.self, MSCrashes.self ])
+        
         FBSDKApplicationDelegate.sharedInstance().application(application,
             didFinishLaunchingWithOptions:launchOptions)
 
